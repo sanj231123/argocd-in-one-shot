@@ -10,11 +10,11 @@ data:
 
   # Email service configuration: SMTP settings for sending emails
   service.email: |
-    username: $email-username         # Email username (set as secret)
-    password: $email-password         # Email password (set as secret)
+    username: $EMAIL_USERNAME         # Email username (set as secret)
+    password: $EMAIL_PASSWORD         # Email password (set as secret)
     host: smtp.gmail.com              # SMTP server host
     port: 465                         # SMTP server port (SSL)
-    from: $email-username             # Sender email address
+    from: $EMAIL_USERNAME             # Sender email address
 
   # Template for Degraded health: email content when app health is degraded
   template.email-health-degraded: |
