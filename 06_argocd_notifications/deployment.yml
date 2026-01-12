@@ -13,25 +13,29 @@ spec:
         app: chai-app
     spec:
       containers:
-      - name: chai-app
-        image: trainwithshubham/chai-devops:v1.0.1
-        ports:
-          - containerPort: 80
-        env:
-        - name: EMAIL_USERNAME
-          valueFrom:
-            secretKeyRef:
-              name: argocd-notifications-secret
-              key: EMAIL_USERNAME
-         - name: EMAIL_PASSWORD
-          valueFrom:
-            secretKeyRef:
-              name: argocd-notifications-secret
-              key: EMAIL_PASSWORD     
-        resources:
-          requests:
-            memory: "64Mi"
-            cpu: "50m"
-          limits:
-            memory: "256Mi"
-            cpu: "200m"
+        - name: chai-app
+          image: trainwithshubham/chai-devops:v1.0.1
+
+          ports:
+            - containerPort: 80
+
+          env:
+            - name: EMAIL_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-notifications-secret
+                  key: EMAIL_USERNAME
+
+            - name: EMAIL_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: argocd-notifications-secret
+                  key: EMAIL_PASSWORD
+
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
