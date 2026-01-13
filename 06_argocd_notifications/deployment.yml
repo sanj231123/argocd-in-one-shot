@@ -4,7 +4,7 @@ metadata:
   name: chai-app
   namespace: argocd
 spec:
-  replicas: 3
+  replicas: 8
   selector:
     matchLabels:
       app: chai-app
